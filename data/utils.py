@@ -35,6 +35,7 @@ def load_human_ratings(word):
     logits = torch.stack(ratings).to(device)
     # logits = torch.mean(logits, dim=0).softmax(dim=0)
     logits = torch.mean(logits, dim=0)
+    logits = logits - torch.min(logits)
     logits = logits / torch.mean(logits)
 
     return logits

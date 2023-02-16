@@ -23,6 +23,10 @@ def get_color_word_associations(text, prompts, colors, processor, model):
             
     logits = torch.cat(logits)
     logits = torch.mean(logits, dim=0).softmax(dim=0)
+    # logits = torch.mean(logits, dim=0)
+    # logits = logits - torch.min(logits)
+    # logits = logits - torch.mean(logits)
+    
     return logits
 
 

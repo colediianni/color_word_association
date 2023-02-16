@@ -32,3 +32,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# softmax both
+# custom average corr coef 0.6618853608719082
+# cifar100 average corr coef 0.651793663869699
+
+# (logit - min) / average
+# custom average corr coef 0.7655195774843114
+# cifar100 average corr coef 0.7132087811258802
+
+# mix
+# custom average corr coef 0.6487777991562128
+# cifar100 average corr coef 0.641209737035525
