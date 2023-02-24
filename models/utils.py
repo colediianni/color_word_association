@@ -9,6 +9,8 @@ def load_model(model_name):
         return model, processor
 
 
+def check_logits_are_probabilities(logits):
+    assert 0.99999 <= sum(logits).item() <= 1.00001
 
 def get_color_word_associations(text, prompts, colors, processor, model):
     logits = []
@@ -25,8 +27,8 @@ def get_color_word_associations(text, prompts, colors, processor, model):
     logits = torch.mean(logits, dim=0).softmax(dim=0)
     # logits = torch.mean(logits, dim=0)
     # logits = logits - torch.min(logits)
-    # logits = logits - torch.mean(logits)
-    
+    # logits = logits / torch.sum(logits)
+    check_logits_are_probabilities(logits)
     return logits
 
 
