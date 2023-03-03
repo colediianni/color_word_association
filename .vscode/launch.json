@@ -18,6 +18,21 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "cwd": "C:\\Users\\Cole\\Desktop\\color_word_association"
+        },
+        {
+            "name": "human_clip_dist_comparison",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "C:\\Users\\Cole\\Desktop\\color_word_association\\human_comparison.py",
+            "args": [
+                "--dataset", "rathore", // rathore, mukherjee
+                "--model-type", "clip",
+                "--template", "custom"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "C:\\Users\\Cole\\Desktop\\color_word_association"
         }
     ]
 }
