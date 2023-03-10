@@ -12,7 +12,7 @@ def load_model(model_name):
 def check_logits_are_probabilities(logits):
     assert 0.99999 <= sum(logits).item() <= 1.00001
 
-def get_color_word_associations(text, prompts, colors, processor, model):
+def get_color_word_associations(text, prompts, colors, processor, model, convert_to_prob=True):
     logits = []
     for prompt in tqdm.tqdm(prompts):
         with torch.no_grad():
@@ -23,12 +23,16 @@ def get_color_word_associations(text, prompts, colors, processor, model):
             logits_per_text = outputs.logits_per_text #.softmax(dim=1)
             logits.append(logits_per_text)        
             
-    logits = torch.cat(logits)
-    logits = torch.mean(logits, dim=0).softmax(dim=0)
-    # logits = torch.mean(logits, dim=0)
-    # logits = logits - torch.min(logits)
-    # logits = logits / torch.sum(logits)
-    check_logits_are_probabilities(logits)
+    if convert_to_prob:
+        logits = torch.cat(logits)
+        logits = torch.mean(logits, dim=0).softmax(dim=0)
+        # logits = torch.mean(logits, dim=0)
+        # logits = logits - torch.min(logits)
+        # logits = logits / torch.sum(logits)
+        check_logits_are_probabilities(logits)
+    else:
+        logits = torch.cat(logits)
+        logits = torch.mean(logits, dim=0)
     return logits
 
 

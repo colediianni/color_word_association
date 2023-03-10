@@ -54,7 +54,6 @@ if __name__ == "__main__":
 # rathore: average wasserstein dist 0.01233944862472298
 
 
-
 # softmax both
 # custom average corr coef 0.6618853608719082
 # cifar100 average corr coef 0.651793663869699

@@ -8,10 +8,14 @@ import colormath
 import colormath.color_conversions as conv
 import yaml
 
-def plot_color_association_bar_chart(color_list, hist_values, title):
+def plot_color_association_bar_chart(color_list, hist_values, title, save_file_name=None):
     plt.title(title)
-    plt.bar(x=range(len(hist_values)), height=hist_values, color=color_list)
-    plt.show()
+    plt.bar(x=range(len(hist_values)), height=hist_values, color=color_list, edgecolor="black", linewidth=1)
+    if save_file_name != None:
+        plt.savefig(save_file_name)
+        plt.clf()
+    else:
+        plt.show()
 
 
 def plot_color_association_comparison(color_list, hist_values, titles, word, save_file_name=None):

@@ -11,9 +11,9 @@
             // "program": "${file}",
             "program": "C:\\Users\\Cole\\Desktop\\color_word_association\\cwa_histogram_visualization.py",
             "args": [
-                "--dataset", "rathore", // rathore, mukherjee
+                "--dataset", "mukherjee", // rathore, mukherjee
                 "--model-type", "clip",
-                "--template", "custom"
+                "--template", "food_and_concepts" // foods, food_and_concepts
             ],
             "console": "integratedTerminal",
             "justMyCode": true,
@@ -26,9 +26,39 @@
             // "program": "${file}",
             "program": "C:\\Users\\Cole\\Desktop\\color_word_association\\human_comparison.py",
             "args": [
+                "--dataset", "mukherjee", // rathore, mukherjee
+                "--model-type", "clip",
+                "--template", "food_and_concepts" // foods, food_and_concepts
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "C:\\Users\\Cole\\Desktop\\color_word_association"
+        },
+        {
+            "name": "histogram_testing",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "C:\\Users\\Cole\\Desktop\\color_word_association\\cwa_histogram_testing.py",
+            "args": [
                 "--dataset", "rathore", // rathore, mukherjee
                 "--model-type", "clip",
                 "--template", "custom"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "C:\\Users\\Cole\\Desktop\\color_word_association"
+        },
+        {
+            "name": "image_testing",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "C:\\Users\\Cole\\Desktop\\color_word_association\\cwa_image_testing.py",
+            "args": [
+                "--dataset", "rathore", // rathore, mukherjee
+                "--model-type", "clip",
+                "--template", "foods"
             ],
             "console": "integratedTerminal",
             "justMyCode": true,

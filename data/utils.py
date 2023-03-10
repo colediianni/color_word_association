@@ -5,6 +5,8 @@ import numpy as np
 import colormath
 import colormath.color_conversions as conv
 import itertools
+from PIL import Image
+import torchvision.transforms as transforms
 
 
 def load_templates(template):
@@ -103,3 +105,18 @@ def get_concept_list(concepts):
         return all_templates
     else:
         raise Exception("given concept is not in concept_list.yml and is not 'all'")
+    
+
+
+def load_test_images(image_path):
+    image_names = os.listdir(image_path)
+    images = []
+    # Define a transform to convert the image to tensor
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Resize([100, 100])])
+    for image in image_names:
+        # Read the image
+        img = Image.open(os.path.join(image_path, image))
+        # Convert the image to PyTorch tensor
+        tensor_img = transform(img)
+        images.append(tensor_img)
+    return torch.stack(images), image_names
