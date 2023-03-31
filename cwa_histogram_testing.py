@@ -17,10 +17,10 @@ def main():
     colors = [image[sample].permute(2, 0, 1) for sample in range(image.shape[0])]
     output_folder = os.path.join(ROOT, 'output', "test_visualizations")
 
-    if not  os.path.exists(output_folder):
+    if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    for concept in ["red", "green", "blue", "purple", "black", "white", "pink", "yellow", "orange"]:
+    for concept in ["red", "green", "blue", "purple", "black", "white", "grey", "gray", "pink", "yellow", "orange", "cyan", "magenta", "light blue"]:
         print(concept)
         # human_logits = load_human_ratings(concept, args.dataset).cpu()
         # plot_color_association_bar_chart([image[sample, 0, 0].cpu().numpy() for sample in range(image.shape[0])], human_logits, concept)

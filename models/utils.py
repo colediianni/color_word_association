@@ -32,6 +32,7 @@ def get_color_word_associations(text, prompts, colors, processor, model, convert
         check_logits_are_probabilities(logits)
     else:
         logits = torch.cat(logits)
+        # print(logits.shape)
         logits = torch.mean(logits, dim=0)
     return logits
 

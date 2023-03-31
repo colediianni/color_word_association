@@ -11,6 +11,7 @@ import yaml
 def plot_color_association_bar_chart(color_list, hist_values, title, save_file_name=None):
     plt.title(title)
     plt.bar(x=range(len(hist_values)), height=hist_values, color=color_list, edgecolor="black", linewidth=1)
+    plt.ylabel("Association")
     if save_file_name != None:
         plt.savefig(save_file_name)
         plt.clf()
@@ -26,13 +27,14 @@ def plot_color_association_comparison(color_list, hist_values, titles, word, sav
     for i in range(num_plots):
         axis[i].bar(x=range(len(hist_values[i])), height=hist_values[i], color=color_list, edgecolor="black", linewidth=1)
         axis[i].set_title(titles[i])
+        axis[i].set_ylabel("Association")
         axis[i].tick_params(
             axis='x',          # changes apply to the x-axis
             which='both',      # both major and minor ticks are affected
             bottom=False,      # ticks along the bottom edge are off
             top=False,         # ticks along the top edge are off
             labelbottom=False) # labels along the bottom edge are off
-        axis[i].set_ylim(0, 0.5)
+        # axis[i].set_ylim(0, 0.5)
     figure.suptitle(word)
     if save_file_name != None:
         plt.savefig(save_file_name)

@@ -51,8 +51,8 @@ caltech101:
 - 'a doodle of the {}.'
 
 custom:
-- 'the color of a {}'
-- 'the color of the {}'
+- 'the color {}'
+- 'the color most associated with {}'
 
 foods:
 - 'the color of a {}'

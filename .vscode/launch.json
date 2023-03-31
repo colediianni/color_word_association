@@ -58,7 +58,7 @@
             "args": [
                 "--dataset", "rathore", // rathore, mukherjee
                 "--model-type", "clip",
-                "--template", "foods"
+                "--template", "foods" 
             ],
             "console": "integratedTerminal",
             "justMyCode": true,
