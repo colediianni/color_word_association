@@ -14,7 +14,7 @@ def main():
     args = parser()
     model, processor = load_model(args.model_type)
     prompts = load_templates(args.template)
-    test_images, image_names = load_test_images(os.path.join(ROOT, 'data', "images"))
+    test_images, image_names = load_test_images(os.path.join(ROOT, 'data', "images", "apple_images"))
     image_names = image_names + ["swapped_"+name for name in image_names]
     swapped_images = copy.deepcopy(test_images)
     # print(swapped_images.shape)
